@@ -22,6 +22,19 @@ $endif$
   </style>
 $for(css)$
   <link rel="stylesheet" href="$css$" />
+<link rel="stylesheet" href="/share/vanilla.css">
+<!-- font-aweesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- font-awesome ends -->
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="manifest" href="/icons/site.webmanifest">
+<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-config" content="/icons/browserconfig.xml">
+<meta name="theme-color" content="#000000">
 $endfor$
 $for(header-includes)$
   $header-includes$
@@ -37,9 +50,21 @@ $endif$
   <![endif]-->
 </head>
 <body>
+  <nav class="nav-home">
+    <div class="nav-container" id="navContainer">
+        <img class="nav-logo banner" src="/share/liecorp-logo.png" alt="Logo Liecorp" height="50px">
+        <!-- navbar content -->
+        <div class="top-navbar" id="topNavbar"></div>
+        <!-- navbar content end -->
+    </div>
+</nav>
 $for(include-before)$
 $include-before$
 $endfor$
+<div class="content-container">
+  <div class="panel-left">
+    <div class="content content-box">
+      <!-- content area -->
 $if(title)$
 <header id="title-block-header">
 <h1 class="title">$title$</h1>
@@ -69,8 +94,59 @@ $table-of-contents$
 </nav>
 $endif$
 $body$
+    <!-- content area ends -->
+    </div>
+  </div>
+</div>
+            <!-- news section start -->
+            <div class="content">
+              <!-- news section head start -->
+              <h3 class="latest-news latest-news-head">
+                  <a title="Browse the news archives" href="/news/">Latest News</a>
+                  <div class="triangle-down"></div>
+              </h3>
+              <!-- news section head end -->
+
+              <!-- news section object start -->
+              <div id="newsItems">Enable javascript to see news contents.</div>
+              <!-- news section object end -->
+
+              <!-- old news section head start -->
+              <h3 class="latest-news latest-news-head">
+                  <a title="Browse the news archives" href="/news/">Older News</a>
+                  <div class="triangle-down"></div>
+              </h3>
+              <!-- news section head end -->
+
+              <!-- news section object start -->
+              <div>
+                  <dl class="news-list" id="oldNewsItems">
+                      <dt>No item</dt>
+                      <dd>
+                          Enable javascript to see content.
+                      </dd>
+                  </dl>
+              </div>
+              <!-- old news section object end -->
+          </div>
+          <!-- news section end -->
+      </div>
+      <div class="panel-right">
+          <!-- secondary content block -->
+          <div id="infoPanel" class="content content-box">Enable javascript to see contents.</div>
+          <!-- secondary content block end -->
+
+          <!-- nginx welcome message -->
+          <div id="nginxWelcome" class="content">Enable javascript to see contents.</div>
+          <!-- nginx welcome message end -->
+      </div>
+  </div>
 $for(include-after)$
 $include-after$
 $endfor$
+    <!-- Javascripts -->
+    <script src="/share/scripts.js"></script>
+    <script src="/share/nav.js"></script>
+    <script src="/share/index.js"></script>
 </body>
 </html>
